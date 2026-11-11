@@ -1,0 +1,156 @@
+/* ============================================================
+   THE REAL ARCHITECT — PORTFOLIO THEME
+   File: web/src/index.css
+   Red / black / 8-bit pixel foundation
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --tra-red: #ff2b2b;
+  --tra-red-soft: #ff6b6b;
+  --tra-red-dark: #7a0f0f;
+  --tra-black: #0a0000;
+  --tra-black-card: #140000;
+  --tra-text-dim: #d98080;
+  --tra-font: "Press Start 2P", "Courier New", monospace;
+  --tra-border: 4px solid var(--tra-red);
+  --tra-shadow-pixel: 4px 4px 0 var(--tra-red-dark);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--tra-black);
+  color: var(--tra-red);
+  font-family: var(--tra-font);
+  -webkit-font-smoothing: none;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+::selection {
+  background: var(--tra-red);
+  color: var(--tra-black);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--tra-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tra-red-dark);
+  border: 2px solid var(--tra-red);
+}
+
+/* ---------------- Pixel box ---------------- */
+.tra-box {
+  border: var(--tra-border);
+  box-shadow:
+    0 0 0 4px var(--tra-black),
+    0 0 0 8px var(--tra-red-dark);
+  background: var(--tra-black-card);
+  padding: 16px;
+}
+
+/* ---------------- Buttons ---------------- */
+.tra-btn {
+  font-family: var(--tra-font);
+  font-size: 10px;
+  background: var(--tra-red);
+  color: var(--tra-black);
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  box-shadow: var(--tra-shadow-pixel);
+  transition: transform 0.05s;
+}
+.tra-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--tra-red-dark);
+  background: var(--tra-red-soft);
+}
+.tra-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--tra-red-dark);
+}
+.tra-btn--ghost {
+  background: var(--tra-black-card);
+  color: var(--tra-red);
+  border: 3px solid var(--tra-red);
+}
+
+/* ---------------- Titles ---------------- */
+.tra-title {
+  text-shadow: 3px 3px 0 var(--tra-red-dark);
+  letter-spacing: 1px;
+}
+
+/* ---------------- CRT scanlines ---------------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.25) 0px,
+    rgba(0, 0, 0, 0.25) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes tra-blink {
+  50% { opacity: 0; }
+}
+.tra-blink {
+  animation: tra-blink 1s steps(2) infinite;
+}
+
+@keyframes tra-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.tra-float {
+  animation: tra-float 2.5s ease-in-out infinite;
+}
+
+@keyframes tra-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.tra-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tra-scroll 14s linear infinite;
+  padding: 8px 0;
+  font-size: 10px;
+}
+
+/* ---------------- XP bars ---------------- */
+.tra-bar {
+  background: #2b0000;
+  border: 2px solid var(--tra-red-dark);
+  height: 16px;
+}
+.tra-bar-fill {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--tra-red) 0 6px,
+    #c40e0e 6px 12px
+  );
+  height: 100%;
+  transition: width 0.4s steps(12);
+}
