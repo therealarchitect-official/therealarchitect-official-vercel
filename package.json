@@ -1,0 +1,31 @@
+{
+  "name": "therealarchitect-official",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn redwood dev",
+    "build": "yarn redwood build",
+    "deploy": "yarn redwood deploy vercel --prisma-db"
+  },
+  "eslintConfig": {
+    "extends": "@redwood/eslint-config"
+  },
+  "dependencies": {
+    "@redwoodjs/api": "7.x",
+    "@redwoodjs/auth": "7.x",
+    "@redwoodjs/forms": "7.x",
+    "@redwoodjs/router": "7.x",
+    "@redwoodjs/web": "7.x",
+    "graphql": "16.x",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@redwoodjs/cli": "7.x"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
