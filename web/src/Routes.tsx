@@ -1,7 +1,7 @@
 // ============================================================
 // THE REAL ARCHITECT — PORTFOLIO ROUTE DEFINITIONS
 // File: web/src/Routes.tsx
-// Registered pages: Home, About, Projects, Contact
+// Registered pages: Home, Projects
 // ============================================================
 
 import { Set, Router, Route } from '@redwoodjs/router'
@@ -13,9 +13,7 @@ const Routes = () => {
     <Router>
       <Set wrap={SiteLayout}>
         <Route path="/" page={HomePage} name="home" />
-        <Route path="/about" page={AboutPage} name="about" />
         <Route path="/projects" page={ProjectsPage} name="projects" />
-        <Route path="/contact" page={ContactPage} name="contact" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
