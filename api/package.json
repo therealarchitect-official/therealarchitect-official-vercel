@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@redwoodjs/api": "8.x",
+    "@redwoodjs/graphql-server": "8.x",
+    "@prisma/client": "5.x",
+    "graphql": "16.x"
+  },
+  "devDependencies": {
+    "prisma": "5.x"
+  }
+}
