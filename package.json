@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "yarn redwood dev",
     "build": "yarn redwood build",
-    "deploy": "yarn redwood deploy vercel --prisma-db"
+    "deploy": "yarn redwood deploy vercel"
   },
   "eslintConfig": {
     "extends": "@redwood/eslint-config"
