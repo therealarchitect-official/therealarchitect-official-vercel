@@ -1,0 +1,22 @@
+# ============================================================
+# THE REAL ARCHITECT — REDWOOD PROJECT CONFIG
+# File: redwood.toml (repo root)
+# ============================================================
+
+[web]
+  title = "The Real Architect"
+  port = 8910
+  apiProxyPath = "/.redwood/functions/graphql"
+  includeEnvironmentVariables = []
+
+[api]
+  port = 8911
+
+[browser]
+  open = false
+
+[generate]
+  stories = false
+  tests = false
+
+[[additionalJobs]]
