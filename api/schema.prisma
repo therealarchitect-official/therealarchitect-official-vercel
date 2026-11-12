@@ -1,0 +1,23 @@
+// ============================================================
+// THE REAL ARCHITECT — DATABASE SCHEMA
+// File: api/db/schema.prisma
+// One table for now: Project (for the Projects page)
+// ============================================================
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  name      String
+  tech      String
+  desc      String
+  progress  Int      @default(0)
+  createdAt DateTime @default(now())
+}
